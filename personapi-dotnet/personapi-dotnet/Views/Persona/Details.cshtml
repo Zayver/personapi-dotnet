@@ -1,0 +1,50 @@
+@model personapi_dotnet.Models.Entities.Persona
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Persona con id @ViewContext.RouteData.Values["id"]</h4>
+    <hr class="hr" />
+
+    <div class="row">
+
+        <div class="col-sm-2 fw-bolder">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </div>
+
+        <div class="col-sm-2 fw-bolder">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </div>
+
+        <div class="col-sm-2 fw-bolder">
+            @Html.DisplayNameFor(model => model.Genero)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </div>
+
+        <div class="col-sm-2 fw-bolder">
+            @Html.DisplayNameFor(model => model.Edad)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.Edad)
+        </div>
+
+    </div>
+</div>
+<hr class="hr" />
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Cc">Editar</a> |
+    <a asp-action="Index">Volver</a>
+</div>

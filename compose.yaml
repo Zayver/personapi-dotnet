@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  sql-server:
+    build: ./sqlserver/
+    hostname: sqlserver
+    user: root
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: Arqui1234
+      MSSQL_PID: Express
+    ports:
+      - "1433:1433"
+    container_name: sql-server
+    restart: always
+    networks:
+      - lab
+  
+  personapi-dotnet:
+    build: ./personapi-dotnet
+    ports:
+      - "8080:80"
+    networks:
+      - lab
+    depends_on:
+      - sql-server
+
+networks:
+  lab:
+    driver: bridge

@@ -1,4 +1,6 @@
 FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS base
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+RUN apk add --no-cache icu-libs
 WORKDIR /app
 EXPOSE 80
 

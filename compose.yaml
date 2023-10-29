@@ -8,9 +8,7 @@ services:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: Arqui1234
       MSSQL_PID: Express
-    ports:
-      - "1433:1433"
-    container_name: sql-server
+    container_name: sqlserver
     restart: always
     networks:
       - lab
